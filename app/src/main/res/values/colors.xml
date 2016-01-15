@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic colors -->
+    <color name="primary">#607D8B</color>
+    <color name="primaryLight">#CFD8DC</color>
+    <color name="primaryDark">#455A64</color>
+    <color name="accent">#CDDC39</color>
+
+    <!-- Text colors -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#727272</color>
+    <color name="textIcons">#FFFFFF</color>
+
+    <!-- Dividers -->
+    <color name="divider">#B6B6B6</color>
+
+</resources>

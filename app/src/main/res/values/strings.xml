@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RtlViewPager</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Tabs -->
+    <string name="tab_news">الأخبار</string>
+    <string name="tab_photos">الصور</string>
+    <string name="tab_videos">الفيديو</string>
+</resources>

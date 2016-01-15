@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    style="@style/ImageDarkRippleStyle">
+    <RelativeLayout
+        android:id="@+id/rl_item_news_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/tv_item_news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textColor="@color/textPrimary"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_item_news_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/textSecondary"
+                android:textSize="16dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</com.balysv.materialripple.MaterialRippleLayout>
