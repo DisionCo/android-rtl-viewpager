@@ -25,7 +25,7 @@
                 android:textColor="@color/textPrimary"
                 android:textSize="18dp"/>
             <TextView
-                android:id="@+id/tv_item_news_date"
+                android:id="@+id/tv_item_news_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

@@ -32,7 +32,7 @@
     </style>
 
     <style name="DisionTabLayout" parent="Widget.Design.TabLayout">
-        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:background">@color/primary</item>
         <item name="tabTextAppearance">@style/DisionTabTextAppearance</item>
         <item name="tabSelectedTextColor">@color/textIcons</item>
     </style>

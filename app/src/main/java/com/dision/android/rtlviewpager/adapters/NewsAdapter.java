@@ -10,8 +10,6 @@ import android.widget.TextView;
 import com.dision.android.rtlviewpager.R;
 import com.dision.android.rtlviewpager.rest.model.FeedItem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -31,44 +29,9 @@ public class NewsAdapter
     }
 
     // methods
-    public void addData(FeedItem[] data, boolean notify) {
-        addData(Arrays.asList(data), notify);
-    }
-
-    public void addData(List<FeedItem> data, boolean notify) {
-        int startCount = mData.size();
-
-        mData.addAll(data);
-
-        if (notify) {
-            try {
-                notifyItemRangeInserted(startCount, data.size());
-            } catch (IndexOutOfBoundsException e) {
-                notifyDataSetChanged();
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void clearData(boolean notify) {
-        mData.clear();
-
-        if (notify) {
-            notifyDataSetChanged();
-        }
-    }
-
-    public List<FeedItem> getData() {
-        return mData;
-    }
-
     @Override
     public int getItemCount() {
         return mData.size();
-    }
-
-    public FeedItem getItem(int position) {
-        return mData.get(position);
     }
 
     @Override
@@ -83,7 +46,7 @@ public class NewsAdapter
         FeedItem item = mData.get(position);
 
         viewHolder.tvTitle.setText(item.getTitle());
-        viewHolder.tvDate.setText(item.getDescription());
+        viewHolder.tvDescription.setText(item.getDescription());
     }
 
     // inner classes
@@ -92,8 +55,8 @@ public class NewsAdapter
         // UI variables
         @Bind(R.id.tv_item_news_title)
         TextView tvTitle;
-        @Bind(R.id.tv_item_news_date)
-        TextView tvDate;
+        @Bind(R.id.tv_item_news_description)
+        TextView tvDescription;
 
         // constructor
         public NewsHolder(View itemView) {

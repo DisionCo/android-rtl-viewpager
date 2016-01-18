@@ -6,4 +6,8 @@
     <string name="tab_news">الأخبار</string>
     <string name="tab_photos">الصور</string>
     <string name="tab_videos">الفيديو</string>
+
+    <!-- Error -->
+    <string name="error_no_internet">حدثت مشكلة أثناء استعراض البيانات، فضلاً التأكد من اتصالك بالانترنت وإعادة المحاولة مرة أخرى!</string>
+
 </resources>

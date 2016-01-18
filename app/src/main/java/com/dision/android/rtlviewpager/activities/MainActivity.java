@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.dision.android.rtlviewpager.DisionApp;
 import com.dision.android.rtlviewpager.R;
@@ -15,6 +17,7 @@ import com.dision.android.rtlviewpager.adapters.TabsAdapter;
 import com.dision.android.rtlviewpager.fragments.NewsFragment;
 import com.dision.android.rtlviewpager.models.Tab;
 import com.dision.android.rtlviewpager.rest.model.Feed;
+import com.rey.material.widget.ProgressView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int TAB_PHOTOS = 2;
     private static final int TAB_VIDEOS = 3;
 
+    private static final int SHOW_PROGRESS = 1;
+    private static final int SHOW_VIEWPAGER = 2;
+    private static final int SHOW_EMPTY = 3;
+
     // variables
     private TabsAdapter mTabsAdapter;
     private Tab[] mTabs;
@@ -43,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tl;
     @Bind(R.id.vp_activity_main)
     ViewPager vp;
+    @Bind(R.id.pv_activity_main)
+    ProgressView pv;
+    @Bind(R.id.tv_activity_main_empty)
+    TextView tvEmpty;
 
     // methods
     @Override
@@ -102,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setToolbarUiSettings() {
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setAdapters() {
@@ -119,10 +127,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getRssFeed() {
+        showView(SHOW_PROGRESS);
         DisionApp.getRestClient().getAppService().getRssFeed(new Callback<Feed>() {
             @Override
             public void success(Feed apiResponse, Response response) {
                 Log.d("Rss feed success", "News count " + apiResponse.getChannel().getFeedItems().size());
+
+                showView(SHOW_VIEWPAGER);
 
                 mFeed = apiResponse;
 
@@ -133,7 +144,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void failure(RetrofitError error) {
                 error.printStackTrace();
+                showView(SHOW_EMPTY);
             }
         });
+    }
+
+    private void showView(int viewId) {
+        vp.setVisibility(viewId == SHOW_VIEWPAGER ? View.VISIBLE : View.GONE);
+        pv.setVisibility(viewId == SHOW_PROGRESS ? View.VISIBLE : View.GONE);
+        tvEmpty.setVisibility(viewId == SHOW_EMPTY ? View.VISIBLE : View.GONE);
     }
 }
