@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity{
         mTabsAdapter = new RTLPagerAdapter(getFragmentManager(), mTabs, true);
         // set adapter to ViewPager
         vp.setAdapter(mTabsAdapter);
-        vp.isRtlOriented(true);
+        vp.setRtlOriented(true);
         tl.setupWithViewPager(vp);
     }
 

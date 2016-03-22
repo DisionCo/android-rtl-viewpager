@@ -26,7 +26,7 @@ public class RTLViewPager extends ViewPager{
      * To use this method call first {@link android.support.v4.view.ViewPager#setAdapter(android.support.v4.view.PagerAdapter)}
      * @param isRtlOriented is right to left oriented
      */
-    public void isRtlOriented(boolean isRtlOriented){
+    public void setRtlOriented(boolean isRtlOriented){
         mIsRtlOriented = isRtlOriented;
         if(mIsRtlOriented && getAdapter() != null){
             setCurrentItem(getAdapter().getCount() - 1);
