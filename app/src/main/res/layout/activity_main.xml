@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat" />
     <android.support.design.widget.TabLayout
         android:id="@+id/tl_activity_main"
         android:layout_below="@id/toolbar_activity_main"
@@ -19,11 +19,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/DisionTabLayout" />
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_activity_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tl_activity_main"/>
+        <com.dision.android.rtlviewpager.RTLViewPager
+            android:id="@+id/vp_activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tl_activity_main">
+            </com.dision.android.rtlviewpager.RTLViewPager>
     <com.rey.material.widget.ProgressView
         android:id="@+id/pv_activity_main"
         android:layout_width="48dp"
